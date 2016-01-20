@@ -64,16 +64,34 @@ def say_goodbye():
 def show_madlib():
     """run users madlib game"""
 
-    game_person = request.args.get("person")
-    game_color =request.args.get("color")
-    game_noun= request.args.get("noun")
     game_adj=request.args.get("adj")
+    game_ptverb = request.args.get("pt-verb")
+    game_plnoun =request.args.get("pl-noun")
+    game_drink= request.args.get("drink")
+    game_meal= request.args.get("meal")
+    game_location= request.args.get("location")
+    game_noun= request.args.get("noun")
+    game_celebrity= request.args.get("celebrity")
+    game_pers_trait= request.args.get("pers-trait")
+    game_tv= request.args.get("tv")
+    game_clothing= request.args.get("clothing")
+    game_n_adj= request.args.get("n-adj")
+    game_num=request.args.get("num")
 
     return render_template("madlib.html",
                             noun=game_noun,
-                            person=game_person,
-                            color=game_color,
-                            adj=game_adj)
+                            ptverb=game_ptverb,
+                            plnoun=game_plnoun,
+                            adj=game_adj,
+                            drink=game_drink,
+                            meal=game_meal,
+                            location=game_location,
+                            celebrity=game_celebrity,
+                            perstrait=game_pers_trait,
+                            tv=game_tv,
+                            clothing=game_clothing,
+                            nadj=game_n_adj,
+                            num=game_num)
 
 
 
