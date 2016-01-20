@@ -60,6 +60,21 @@ def say_goodbye():
     """bye bitch."""
     return render_template("goodbye.html")
 
+@app.route('/madlib')
+def show_madlib():
+    """run users madlib game"""
+
+    game_person = request.args.get("person")
+    game_color =request.args.get("color")
+    game_noun= request.args.get("noun")
+    game_adj=request.args.get("adj")
+
+    return render_template("madlib.html",
+                            noun=game_noun,
+                            person=game_person,
+                            color=game_color,
+                            adj=game_adj)
+
 
 
 
