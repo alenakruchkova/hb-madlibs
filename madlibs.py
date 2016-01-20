@@ -12,21 +12,21 @@ AWESOMENESS = [
     'brilliant', 'ducky', 'coolio', 'incredible', 'wonderful', 'smashing', 'lovely']
 
 
-@app.route('/')
+@app.route('/', methods=["GET"])
 def start_here():
     """Homepage."""
 
     return "Hi! This is the home page."
 
 
-@app.route('/hello')
+@app.route('/hello', methods=["GET"])
 def say_hello():
     """Save hello to user."""
 
     return render_template("hello.html")
 
 
-@app.route('/greet')
+@app.route('/greet', methods=["GET"])
 def greet_person():
     """Greet user."""
 
@@ -38,7 +38,7 @@ def greet_person():
                            person=player,
                            compliment=compliment)
 
-@app.route('/redirect')
+@app.route('/redirect', methods=["GET"])
 def redirect_answer():
     """redirect user answer."""
 
@@ -50,17 +50,17 @@ def redirect_answer():
         return redirect('/goodbye')
 
 
-@app.route('/game')
+@app.route('/game', methods=["GET"])
 def play_game():
     """play game with user."""
     return render_template("game.html")
 
-@app.route('/goodbye')
+@app.route('/goodbye', methods=["GET"])
 def say_goodbye():
     """bye bitch."""
     return render_template("goodbye.html")
 
-@app.route('/madlib')
+@app.route('/madlib', methods=["GET"])
 def show_madlib():
     """run users madlib game"""
 
